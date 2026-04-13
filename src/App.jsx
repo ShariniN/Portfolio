@@ -11,15 +11,14 @@ import Projects from './components/Projects';
 import Certs from './components/Certs';
 import Contact from './components/Contact';
 import Chatbot from './components/Chatbot';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   const [active, setActive] = useState("home");
 
-  // Scroll reveal + active nav — all in ONE effect
   useEffect(() => {
-    document.title = "Sharini Nirmalan — Portfolio";
+    document.title = "Sharini Nirmalan — Software Engineer";
 
-    // Scroll reveal
     const obs = new IntersectionObserver(
       entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("vi"); }),
       { threshold: 0.08 }
@@ -28,7 +27,6 @@ export default function App() {
       document.querySelectorAll(".rv").forEach(el => obs.observe(el));
     }, 80);
 
-    // Active nav section
     const onScroll = () => {
       let cur = "home";
       document.querySelectorAll("section[id]").forEach(s => {
@@ -60,10 +58,10 @@ export default function App() {
       </main>
       <div style={{maxWidth:"1300px",margin:"0 auto",borderTop:"1px solid var(--border)"}}/>
       <footer className="footer">
-        <p className="fc">© 2025 <em>Sharini Nirmalan</em>. All Rights Reserved.</p>
-        <div className="fs"><div className="fsdot"/>Open to opportunities</div>
+        <p className="fc">© 2026 <em>Sharini Nirmalan</em>. All Rights Reserved.</p>
       </footer>
       <Chatbot/>
+      <Analytics/>
     </>
   );
 }

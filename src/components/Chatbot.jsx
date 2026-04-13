@@ -5,15 +5,15 @@ import { mdToHtml } from '../utils/helpers';
 const SUGGESTIONS = [
   "What projects has she built?",
   "What's her tech stack?",
-  "Tell me about PrepWise",
+  "Tell me about her experience",
   "What certifications does she have?",
-  "Is she open to opportunities?",
   "What AI tools does she use?",
+  "Tell me about PrepWise",
 ];
 
 export default function Chatbot() {
   const [open, setOpen]     = useState(false);
-  const [msgs, setMsgs]     = useState([{role:"bot",text:"Hey! 👋 I'm Sharini's portfolio assistant — ask me anything about her projects, skills, or experience!"}]);
+  const [msgs, setMsgs]     = useState([{role:"bot",text:"Hi — I'm Sharini's portfolio assistant. Ask me anything about her projects, skills, or experience."}]);
   const [input, setInput]   = useState("");
   const [loading, setLoad]  = useState(false);
   const [showSug, setShowSug] = useState(true);
@@ -22,7 +22,6 @@ export default function Chatbot() {
   const history  = useRef([]);
   const sysPrompt = useRef(buildSystemPrompt());
 
-  // Use the Vite environment variable
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
   useEffect(() => {
@@ -39,10 +38,18 @@ export default function Chatbot() {
     setInput("");
     setMsgs(p=>[...p,{role:"user",text:q}]);
     setLoad(true);
+
+    // If no API key is configured, provide a helpful fallback
+    if (!API_KEY) {
+      setMsgs(p=>[...p,{role:"bot",text:`I'm currently offline. You can reach Sharini directly at **${DATA.contact.email}** or check out her [GitHub](${DATA.contact.github}) and [LinkedIn](${DATA.contact.linkedin}).`}]);
+      setLoad(false);
+      return;
+    }
+
     history.current.push({role:"user",parts:[{text:q}]});
     try {
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
         {
           method:"POST",
           headers:{"Content-Type":"application/json"},
@@ -54,12 +61,25 @@ export default function Chatbot() {
         }
       );
       const data = await res.json();
+      if (!res.ok) {
+        console.error("Gemini API Error:", data);
+        throw new Error(data?.error?.message || "API request failed");
+      }
+      
       const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text
-        ?? "Sorry, I couldn't get a response right now. Please try again!";
+        ?? "Sorry, I couldn't process that right now. Please try again.";
       history.current.push({role:"model",parts:[{text:reply}]});
       setMsgs(p=>[...p,{role:"bot",text:reply}]);
-    } catch {
-      setMsgs(p=>[...p,{role:"bot",text:"Oops — something went wrong. You can reach Sharini directly at "+DATA.contact.email}]);
+    } catch (err) {
+      console.error(err);
+      history.current.pop(); // Remove the user message if it failed
+      
+      const isOverloaded = err.message && err.message.toLowerCase().includes("high demand");
+      const errText = isOverloaded 
+        ? "I'm currently experiencing high demand and couldn't process that. Please try again in a moment, or reach out to Sharini directly at " + DATA.contact.email
+        : "Something went wrong connecting. Please reach out to Sharini directly at " + DATA.contact.email;
+        
+      setMsgs(p=>[...p,{role:"bot",text:errText}]);
     } finally {
       setLoad(false);
     }
@@ -80,7 +100,7 @@ export default function Chatbot() {
           <div className="chead">
             <div className="chead-l">
               <div className="cavatar">SN</div>
-              <div><div className="cname">Sharini's Portfolio AI</div><div className="cstatus">Online · Gemini 2.0 Flash</div></div>
+              <div><div className="cname">Portfolio Assistant</div><div className="cstatus">{API_KEY ? "Online" : "Offline"}</div></div>
             </div>
             <button className="cclose" onClick={()=>setOpen(false)}>✕</button>
           </div>
@@ -88,7 +108,7 @@ export default function Chatbot() {
           <div className="cmsgs">
             {msgs.map((m,i)=>(
               <div key={i} className={"cmsg "+(m.role==="user"?"user":"bot")}>
-                <span className="cmlabel">{m.role==="user"?"You":"Sharini's AI"}</span>
+                <span className="cmlabel">{m.role==="user"?"You":"Assistant"}</span>
                 {m.role==="user"
                   ? <div className="cmbubble">{m.text}</div>
                   : <div className="cmbubble" dangerouslySetInnerHTML={{__html: mdToHtml(m.text)}}/>
@@ -97,7 +117,7 @@ export default function Chatbot() {
             ))}
             {loading && (
               <div className="cmsg bot">
-                <span className="cmlabel">Sharini's AI</span>
+                <span className="cmlabel">Assistant</span>
                 <div className="ctyping"><span/><span/><span/></div>
               </div>
             )}
@@ -115,7 +135,7 @@ export default function Chatbot() {
               ref={inputRef}
               className="cinput"
               rows={1}
-              placeholder="Ask me anything about Sharini..."
+              placeholder="Ask about Sharini's work..."
               value={input}
               onChange={e=>setInput(e.target.value)}
               onKeyDown={e=>{ if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send(input);} }}

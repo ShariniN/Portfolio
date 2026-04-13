@@ -5,7 +5,7 @@ export default function Education() {
     <section id="education" className="edubg">
       <div className="wrap">
         <p className="slabel rv"><span className="num">02.</span>Education</p>
-        <h2 className="stitle rv">Education</h2>
+        <h2 className="stitle rv">Academic Background</h2>
         {DATA.education.map((e,i)=>(
           <div key={i} className={"edublock rv"+(i?" d1":"")}>
             <div className="eduhead">

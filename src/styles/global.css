@@ -79,7 +79,13 @@ a,button{cursor:none}
 .statlbl{font-family:var(--mono);font-size:.68rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
 .avail{display:flex;align-items:center;gap:.75rem;font-family:var(--mono);font-size:.73rem;color:var(--muted2);padding:1.1rem 1.5rem;border:1px solid var(--border);background:var(--bg3)}
 .avdot{width:7px;height:7px;background:var(--accent3);border-radius:50%;animation:pulse 2s ease infinite;flex-shrink:0}
-.skillsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5px;background:var(--border);border:1px solid var(--border)}
+.skillsgrid{display:grid;grid-template-columns:repeat(4, 1fr);gap:1.5px;background:var(--border);border:1px solid var(--border)}
+@media (max-width: 900px) {
+  .skillsgrid{grid-template-columns:repeat(2, 1fr);}
+}
+@media (max-width: 500px) {
+  .skillsgrid{grid-template-columns:1fr;}
+}
 .scol{background:var(--bg2);padding:1.75rem;transition:background .25s;position:relative;overflow:hidden}
 .scol::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:linear-gradient(180deg,var(--accent),var(--accent2));transition:height .4s}
 .scol:hover::before{height:100%}
@@ -146,7 +152,10 @@ a,button{cursor:none}
 .ckw{color:#c084fc}.cfn{color:#a78bfa}.cstr{color:#34d399}.ccm{color:#2c2c40}.cnm{color:#f472b6}
 /* certs */
 .certbg{background:var(--bg)}
-.certsgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5px;background:var(--border);border:1px solid var(--border)}
+.certsgrid{display:grid;grid-template-columns:repeat(5, 1fr);gap:1.5px;background:var(--border);border:1px solid var(--border)}
+@media (max-width: 1200px) { .certsgrid{grid-template-columns:repeat(3, 1fr);} }
+@media (max-width: 900px) { .certsgrid{grid-template-columns:repeat(2, 1fr);} }
+@media (max-width: 500px) { .certsgrid{grid-template-columns:1fr;} }
 .certcard{background:var(--bg);padding:1.6rem;transition:background .25s;display:flex;flex-direction:column;gap:.5rem;text-decoration:none;color:inherit}
 .certcard:hover{background:var(--bg3)}
 .certissuer{font-family:var(--mono);font-size:.62rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
@@ -164,7 +173,9 @@ a,button{cursor:none}
 .awardcard p{font-family:var(--mono);font-size:.68rem;color:var(--muted2)}
 /* contact */
 .contactbg{background:var(--bg2);border-top:1px solid var(--border)}
-.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:stretch}
+.cform{display:flex;flex-direction:column;gap:.85rem;height:100%}
+.cform button {margin-top:auto;}
 .ch2{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-bottom:1.1rem}
 .ch2 em{font-style:normal;background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .csub{font-size:.92rem;color:var(--muted2);line-height:1.72;margin-bottom:1.8rem}
