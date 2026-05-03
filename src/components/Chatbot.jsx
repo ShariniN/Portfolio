@@ -99,7 +99,7 @@ export default function Chatbot() {
         <div className="cwin">
           <div className="chead">
             <div className="chead-l">
-              <div className="cavatar">SN</div>
+              <div className="cavatar">{"<SN/>"}</div>
               <div><div className="cname">Portfolio Assistant</div><div className="cstatus">{API_KEY ? "Online" : "Offline"}</div></div>
             </div>
             <button className="cclose" onClick={()=>setOpen(false)}>✕</button>

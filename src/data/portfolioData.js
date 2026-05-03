@@ -1,6 +1,6 @@
 export const DATA = {
   name: { first: "Sharini", last: "Nirmalan" },
-  initials: "SN.",
+  initials: "<SN/>",
   tagline: "Software Engineer · Full-Stack & AI Development",
   cvUrl: "https://drive.google.com/file/d/1jjPbSh4oueN3ePOKr_s2K6hj3GzcIGxV/view?usp=sharing",
   contact: {
