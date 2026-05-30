@@ -2,7 +2,7 @@ export const DATA = {
   name: { first: "Sharini", last: "Nirmalan" },
   initials: "<SN/>",
   tagline: "Software Engineer · Full-Stack & AI Development",
-  cvUrl: "https://drive.google.com/file/d/1jjPbSh4oueN3ePOKr_s2K6hj3GzcIGxV/view?usp=sharing",
+  cvUrl: "https://drive.google.com/file/d/1k2JKT4SwZLGtPFv3HGvgV9ClY0o9gwZD/view?usp=sharing",
   contact: {
     email: "nirmalan.sharini@gmail.com",
     linkedin: "https://linkedin.com/in/sharini-nirmalan-5081a0322",
@@ -48,14 +48,16 @@ export const DATA = {
   experience: [
     {
       period: "Feb 2026 – Present",
-      company: "hsenid Business Solutions",
+      company: "HSenid Business Solutions",
       location: "Colombo, Sri Lanka",
-      badge: "Software Engineer Intern",
-      role: "Software Engineer Intern",
+      badge: "Software Engineering Intern (Full Cycle)",
+      role: "Software Engineering Intern (Full Cycle)",
       points: [
-        "Developing and enhancing features across enterprise applications built with C#, .NET MVC, Vue.js, and Visual Basic.",
-        "Identifying, diagnosing, and resolving software defects through structured debugging and dev testing workflows.",
-        "Collaborating with cross-functional teams to deliver production-quality code in an Agile development environment.",
+        "Developed and maintained enterprise software by implementing bug fixes, feature enhancements, and performance optimizations using C#, Vue.js, Knockout.js, Visual Basic, and MySQL.",
+        "Collaborated within Agile Scrum teams, participating in sprint ceremonies including planning, daily stand-ups, backlog grooming, reviews, and retrospectives.",
+        "Utilized Azure DevOps for backlog management, sprint tracking, and release coordination, while using Git for source control, branching, merging, and code collaboration.",
+        "Executed manual and automated testing activities, creating and optimizing Katalon test scripts to improve regression coverage and feature validation efficiency.",
+        "Contributed to application security efforts through Web Application Firewall (WAF) testing and security validation activities.",
       ],
     },
     {
