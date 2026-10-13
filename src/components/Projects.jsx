@@ -1,5 +1,8 @@
 import { DATA } from '../data/portfolioData';
 
+// code lines are stored as [class, text, class, text, ...]
+const pairs = (line) => line.reduce((acc, v, i) => (i % 2 ? acc[acc.length - 1].push(v) : acc.push([v]), acc), []);
+
 export default function Projects() {
   const feat = DATA.projects.find(p => p.featured);
   const rest = DATA.projects.filter(p => !p.featured);
@@ -24,19 +27,14 @@ export default function Projects() {
               <div className="codewin">
                 <div className="codebar">
                   <div className="cd" style={{ background: "#ff5f56" }} /><div className="cd" style={{ background: "#ffbd2e" }} /><div className="cd" style={{ background: "#27c93f" }} />
-                  <span className="ct">prepwise/api/assessRoute.js</span>
+                  <span className="ct">{feat.code?.file}</span>
                 </div>
                 <div className="codebody">
-                  <div><span className="ccm">// adaptive skill assessment engine</span></div>
-                  <div><span className="ckw">const</span> <span className="cfn">assessCandidate</span> = <span className="ckw">async</span> (req, res) =&gt; {"{"}</div>
-                  <div>&nbsp;&nbsp;<span className="ckw">const</span> {"{"} userId, stack {"}"} = req.body;</div>
-                  <div>&nbsp;&nbsp;<span className="ckw">const</span> profile = <span className="ckw">await</span> Profile.<span className="cfn">findById</span>(userId);</div>
-                  <div>&nbsp;&nbsp;<span className="ckw">const</span> questions = <span className="ckw">await</span> llm.<span className="cfn">generate</span>({"{"}</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;model: <span className="cstr">"mistralai/Mixtral-8x7B"</span>,</div>
-                  <div>&nbsp;&nbsp;&nbsp;&nbsp;max_tokens: <span className="cnm">512</span>,</div>
-                  <div>&nbsp;&nbsp;{"}"});</div>
-                  <div>&nbsp;&nbsp;res.<span className="cfn">json</span>({"{"} questions, sessionId {"}"});</div>
-                  <div>{"};"}  </div>
+                  {feat.code?.lines.map((line, i) => (
+                    <div key={i} style={{ whiteSpace: "pre" }}>
+                      {pairs(line).map(([cls, text], j) => cls ? <span key={j} className={cls}>{text}</span> : text)}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

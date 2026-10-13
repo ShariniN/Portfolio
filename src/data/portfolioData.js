@@ -1,8 +1,8 @@
 export const DATA = {
   name: { first: "Sharini", last: "Nirmalan" },
   initials: "<SN/>",
-  tagline: "Software Engineer · Full-Stack & AI Development",
-  cvUrl: "https://drive.google.com/file/d/1k2JKT4SwZLGtPFv3HGvgV9ClY0o9gwZD/view?usp=sharing",
+  tagline: "Software Engineer · .NET · Cloud · Secure Systems",
+  cvUrl: "https://drive.google.com/file/d/1lRlvC_X4-YOmTU562wu93_B953o9Uytt/view?usp=sharing",
   contact: {
     email: "nirmalan.sharini@gmail.com",
     linkedin: "https://linkedin.com/in/sharini-nirmalan-5081a0322",
@@ -11,22 +11,23 @@ export const DATA = {
     githubLabel: "github.com/ShariniN",
   },
 
-  heroChips: ["MERN Stack", "Flutter", "Laravel", "Python", "Java", "C#", "AWS", "Docker", ".NET MVC", "Vue.js"],
+  heroChips: ["C#", ".NET Core", "Java", "Python", "AWS", "Terraform", "Docker", "React", "PyTorch", "SQL"],
 
   bio: [
-    "I build reliable software — from full-stack web applications to AI-powered tools. My work spans MERN, Laravel, Flutter, and .NET MVC, with a growing focus on AI/ML integration using LangChain, Hugging Face, and LLMs.",
-    "Currently a Software Engineer Intern at hsenid Business Solutions, working on feature development, bug resolution, and testing across C#, .NET MVC, Vue.js, and Visual Basic in a production environment.",
-    "Completing a BEng (Hons) in Software Engineering at APIIT Colombo (Staffordshire University UK). I focus on writing clean, maintainable code and delivering end-to-end solutions.",
+    "I build backend and full-stack systems, design on AWS, and care about software that is secure and well tested. My recent work spans enterprise .NET development, cloud architecture with Terraform, concurrent Java systems, and privacy-preserving machine learning.",
+    "Currently a Software Engineering Intern at hSenid Business Solutions, building features, fixing bugs and improving performance in enterprise HR software with C# (.NET Core and .NET Framework), Vue.js and MySQL.",
+    "In the final year of a BEng (Hons) in Software Engineering at APIIT Colombo (Staffordshire University, UK) with a First Class average. My final-year research is on federated fraud detection with adaptive differential privacy, and I'm growing toward application security.",
   ],
 
   skills: [
-    { category: "Frontend", items: ["React.js", "Vue.js", "HTML / CSS", "Tailwind CSS", "Flutter"] },
-    { category: "Backend", items: ["Node.js", "Express.js", "Laravel (PHP)", "Flask / Python", ".NET MVC", "Visual Basic"] },
-    { category: "Cloud & DevOps", items: ["AWS (EC2, S3)", "Docker", "GitHub Actions", "Azure DevOps", "CI/CD Pipelines"] },
-    { category: "AI / ML", items: ["Hugging Face", "LangChain", "Whisper", "Transformers", "LLM Integration"] },
-    { category: "Languages", items: ["Python", "JavaScript", "Java", "C#", "PHP", "Visual Basic"] },
-    { category: "Databases", items: ["MongoDB", "MySQL", "Firebase", "SQLite"] },
-    { category: "Workflow", items: ["Git / GitHub", "Jira", "Agile / Scrum", "Postman", "ITIL"] },
+    { category: "Languages", items: ["C#", "Java", "Python", "JavaScript", "PHP", "SQL"] },
+    { category: "Backend", items: [".NET Core", ".NET Framework", "Node.js / Express", "Java Servlets (Tomcat)", "Laravel", "Flask", "REST APIs"] },
+    { category: "Frontend", items: ["React.js", "Vue.js", "Tailwind CSS", "HTML / CSS", "Flutter"] },
+    { category: "Cloud & DevOps", items: ["AWS (VPC, ECS Fargate, Aurora, DynamoDB, S3)", "Terraform", "Docker", "GitHub Actions", "Azure DevOps"] },
+    { category: "Databases", items: ["MySQL", "Aurora", "DynamoDB", "H2", "MongoDB", "SQLite"] },
+    { category: "Testing & Quality", items: ["JUnit 5", "Mockito", "Playwright", "JMeter", "Postman / Newman", "SonarQube"] },
+    { category: "AI / ML", items: ["PyTorch", "Opacus (differential privacy)", "Flower (federated learning)", "scikit-learn", "Hugging Face", "LangChain"] },
+    { category: "Security", items: ["AWS WAF", "IAM", "KMS", "GuardDuty", "Security Hub", "CloudTrail", "WAF testing"] },
   ],
 
   education: [
@@ -40,7 +41,7 @@ export const DATA = {
         "<b>Status:</b> Completed Year 2 with a First Class average. Currently in final year.",
         "<b>Year 1 Modules:</b> Software Development & Application Modelling (OOP), Web Development, Operating Systems, Server-Side Programming.",
         "<b>Year 2 Modules:</b> Database & Data Structures, Mobile App Development, Agile Software Development (PrepWise project), Advanced Web Technologies.",
-        "<b>Year 3 (Ongoing):</b> Final Year Project, Clean Coding and Concurrent Programming, Emerging Technology, Enterprise Cloud and Distributed Web Applications.",
+        "<b>Year 3 (Ongoing):</b> Final Year Project (federated fraud detection), Clean Coding and Concurrent Programming, Emerging Technologies, Enterprise Cloud and Distributed Web Applications.",
       ],
     },
   ],
@@ -48,15 +49,15 @@ export const DATA = {
   experience: [
     {
       period: "Feb 2026 – Present",
-      company: "HSenid Business Solutions",
+      company: "hSenid Business Solutions",
       location: "Colombo, Sri Lanka",
       badge: "Software Engineering Intern (Full Cycle)",
       role: "Software Engineering Intern (Full Cycle)",
       points: [
-        "Developed and maintained enterprise software by implementing bug fixes, feature enhancements, and performance optimizations using C#, Vue.js, Knockout.js, Visual Basic, and MySQL.",
+        "Built features, bug fixes and performance optimizations for enterprise HR software using C# (.NET Core, .NET Framework), Vue.js, Knockout.js, Visual Basic and MySQL.",
         "Collaborated within Agile Scrum teams, participating in sprint ceremonies including planning, daily stand-ups, backlog grooming, reviews, and retrospectives.",
         "Utilized Azure DevOps for backlog management, sprint tracking, and release coordination, while using Git for source control, branching, merging, and code collaboration.",
-        "Executed manual and automated testing activities, creating and optimizing Katalon test scripts to improve regression coverage and feature validation efficiency.",
+        "Automated regression tests (Katalon) to cut manual re-testing and catch regressions earlier across releases.",
         "Contributed to application security efforts through Web Application Firewall (WAF) testing and security validation activities.",
       ],
     },
@@ -77,17 +78,42 @@ export const DATA = {
   projects: [
     {
       featured: true,
-      title: "PrepWise — AI Interview Prep Platform",
-      description: "AI-powered platform for Software Engineers to prepare for technical interviews. Assesses skill profiles, delivers adaptive questions, provides personalised feedback, and tracks progress. Deployed on AWS with Playwright E2E testing in a full Agile simulation.",
-      tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Playwright", "AWS", "Agile"],
-      github: "https://github.com/ShariniN/PrepWise",
+      title: "Federated Fraud Detection with Adaptive Differential Privacy",
+      description: "Final-year project. Banks can't pool transaction data, so this framework lets them train one shared fraud model without sharing it. Each transaction gets privacy noise scaled by its conformal-prediction uncertainty, the server weights each bank's update by its confidence, and membership-inference attacks test how much the model leaks. Built on 590K real transactions.",
+      tags: ["Python", "PyTorch", "Opacus", "Flower", "scikit-learn", "Differential Privacy"],
+      github: "https://github.com/ShariniN/federated-fraud-detection-adaptive-dp",
+      live: "",
+      code: {
+        file: "src/dp/noise_adaptation.py",
+        lines: [
+          ["ccm", "# borderline transactions keep more signal"],
+          ["ckw", "def ", "cfn", "uncertainty_to_clip_scale", "", "(u, lambda_adapt, min_scale=", "cnm", "0.1", "", "):"],
+          ["", "    w = (", "cnm", "1.0", "", " - lambda_adapt) + lambda_adapt * u"],
+          ["", "    ", "ckw", "if ", "", "isinstance(w, torch.Tensor):"],
+          ["", "        ", "ckw", "return ", "", "torch.clamp(w, min=min_scale, max=", "cnm", "1.0", "", ")"],
+          ["", "    ", "ckw", "return ", "", "np.clip(w, min_scale, ", "cnm", "1.0", "", ")"],
+        ],
+      },
+    },
+    {
+      title: "AWS Healthcare Cloud Migration",
+      description: "Multi-AZ AWS architecture and proof of concept for moving a ~220-VM healthcare platform off a single data centre. 99.99% availability target, warm-standby DR, six-layer security (WAF, IAM, KMS, CloudTrail, Config, GuardDuty), about USD 1,194 a month. Core networking and KMS provisioned with Terraform.",
+      tags: ["AWS", "Terraform", "ECS Fargate", "Aurora", "DynamoDB", "CloudFront"],
+      github: "https://github.com/ShariniN/aws-healthcare-cloud-migration",
       live: "",
     },
     {
-      title: "YouTube Transcript Summarizer",
-      description: "AI tool that extracts, summarises, and generates Q&A from video transcripts. Uses Whisper for speech-to-text and Hugging Face Transformers for summarisation with automatic fallback.",
-      tags: ["Python", "Flask", "Whisper", "Hugging Face", "Transformers"],
-      github: "https://github.com/ShariniN/Youtube_Transcipt_Summarizer",
+      title: "LUDO-T — Multiplayer Client-Server Game",
+      description: "Three-tier multiplayer Ludo in Java 21: Swing client, concurrent game server with TCP sockets and embedded Tomcat servlets, and an H2 database tier over JDBC. 280 JUnit tests passing, 4,000+ stress requests with zero dropped, SonarQube for complexity.",
+      tags: ["Java 21", "Tomcat", "H2 / JDBC", "Concurrency", "JUnit", "JMeter"],
+      github: "https://github.com/ShariniN/ludo-multiplayer-client-server-java",
+      live: "",
+    },
+    {
+      title: "PrepWise — AI Interview Prep Platform",
+      description: "AI-powered platform that assesses software engineers' skills, generates adaptive interview questions and gives personalised feedback. Deployed on AWS with Playwright end-to-end tests, built in an Agile team simulation.",
+      tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Playwright", "AWS"],
+      github: "https://github.com/ShariniN/PrepWise",
       live: "",
     },
     {
@@ -98,31 +124,17 @@ export const DATA = {
       live: "",
     },
     {
+      title: "YouTube Transcript Summarizer",
+      description: "AI tool that extracts, summarises, and generates Q&A from video transcripts. Uses Whisper for speech-to-text and Hugging Face Transformers for summarisation with automatic fallback.",
+      tags: ["Python", "Flask", "Whisper", "Hugging Face", "Transformers"],
+      github: "https://github.com/ShariniN/youtube-transcript-summarizer",
+      live: "",
+    },
+    {
       title: "E-Commerce App — Flutter",
       description: "Cross-platform mobile app with biometric authentication, offline-first architecture using SQLite, camera integration for reviews, and real-time API binding.",
       tags: ["Flutter", "Firebase", "SQLite", "Dart", "Biometrics"],
       github: "https://github.com/ShariniN/Flutter_Assignment2",
-      live: "",
-    },
-    {
-      title: "YC Startup Scraper",
-      description: "Python scraper for the Y Combinator startup directory with multi-strategy founder extraction using Algolia, BeautifulSoup, and Pandas.",
-      tags: ["Python", "Pandas", "BeautifulSoup", "Algolia", "Data Mining"],
-      github: "https://github.com/ShariniN/yc-startup-scraper",
-      live: "",
-    },
-    {
-      title: "Grocies — Online Supermarket",
-      description: "Full-featured web-based supermarket platform built with HTML, CSS, and JavaScript. Includes product browsing, cart management, and responsive UI.",
-      tags: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/ShariniN/Grocies-Supermarket",
-      live: "",
-    },
-    {
-      title: "Event Management System",
-      description: "Desktop application in C# and .NET for managing events end-to-end — role-based authentication, event scheduling, attendee management, and database operations.",
-      tags: ["C#", ".NET Framework", "SQL", "WinForms"],
-      github: "",
       live: "",
     },
   ],
@@ -167,7 +179,7 @@ Be professional, helpful, and concise. Use bullet points for lists. Speak in thi
 
 === ABOUT ===
 Name: Sharini Nirmalan
-Role: Software Engineer Intern at hsenid Business Solutions & Final-Year SE Undergraduate
+Role: Software Engineering Intern at hSenid Business Solutions & Final-Year SE Undergraduate
 Location: Colombo, Sri Lanka
 Email: ${DATA.contact.email}
 LinkedIn: ${DATA.contact.linkedin} | GitHub: ${DATA.contact.github}
