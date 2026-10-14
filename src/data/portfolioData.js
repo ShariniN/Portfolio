@@ -15,7 +15,7 @@ export const DATA = {
 
   bio: [
     "I build backend and full-stack systems, design on AWS, and care about software that is secure and well tested. My recent work spans enterprise .NET development, cloud architecture with Terraform, concurrent Java systems, and privacy-preserving machine learning.",
-    "Currently a Software Engineering Intern at hSenid Business Solutions, building features, fixing bugs and improving performance in enterprise HR software with C# (.NET Core and .NET Framework), Vue.js and MySQL, using Azure DevOps and Git for sprints, source control and releases.",
+    "Currently a Software Engineering Intern at hSenid Business Solutions, building features, fixing bugs and improving performance in enterprise HR software with C# (.NET Core and .NET Framework), Vue.js and MySQL.",
     "In the final year of a BEng (Hons) in Software Engineering at APIIT Colombo (Staffordshire University, UK) with a First Class average. My final-year research is on federated fraud detection with adaptive differential privacy, and I'm growing toward application security.",
   ],
 
